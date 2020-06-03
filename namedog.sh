@@ -43,13 +43,7 @@ then
    if [ -f $START ]
    then
       /bin/sh $START
-      if [ -z $MAIL_TO ]
-      then
-         echo "$DATE: ${PROC_NAME} restarted." >> ${LOGFILE}
-      else
-         # Configure email routine here.  TODO for Simon Ip.
-         echo "$DATE: ${PROC_NAME} restarted. Sent email to ${MAIL_TO}" >> ${LOGFILE}
-      fi
+      echo "$DATE: ${PROC_NAME} restarted." >> ${LOGFILE}
    else
       echo "$DATE: ERROR - ${PROC_NAME} cannot be restarted. No start script ${START} present. Fix it!!!" >> ${LOGFILE}
       exit 255
